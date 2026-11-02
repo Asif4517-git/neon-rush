@@ -2,7 +2,7 @@
 
 The project is pre-configured to build and deploy itself with **GitHub Actions**. Once the repository is pushed, every update to `main` is built and published automatically.
 
-> **I can't push to your account from here.** This workspace has no access to your GitHub credentials or repository, so the final step below must be run by you while signed in as **asif4517-git**.
+> You need permission to push to the repository and configure its GitHub Pages settings.
 
 ---
 
@@ -15,7 +15,7 @@ Your portfolio already lives at **https://asif4517-git.github.io/**. There are t
 | **`neon-rush`** *(recommended)* | `https://asif4517-git.github.io/neon-rush/` | Keeps your existing portfolio at the root untouched. The game lives at its own path. |
 | **`asif4517-git.github.io`** | `https://asif4517-git.github.io/` | Replaces the portfolio currently served at your root domain. Only choose this if you intend to replace it. |
 
-The instructions below use `neon-rush`. The build is a single self-contained `index.html`, so it works at either path with no configuration changes.
+The instructions below use `neon-rush`. The Vite base path and single-file plugin override in `vite.config.ts` are configured for `/neon-rush/`. If deploying at a different path, update both values to match.
 
 ---
 
@@ -58,7 +58,7 @@ gh repo create neon-rush --public --source=. --remote=origin --push
 
 ### 3. Turn on Pages
 
-The workflow includes `enablement: true`, so in most cases Pages turns on automatically on the first run. To be certain:
+Enable Pages in the repository settings before the first deployment. The default workflow token may not have permission to enable it automatically:
 
 1. Open the repository → **Settings** → **Pages**
 2. Under **Build and deployment → Source**, choose **GitHub Actions**
@@ -87,7 +87,7 @@ git remote add root https://github.com/asif4517-git/asif4517-git.github.io.git
 git push root main
 ```
 
-4. Set **Settings → Pages → Source** to **GitHub Actions**.
+4. Set the Vite base path and single-file plugin override in `vite.config.ts` to `/`, then set **Settings → Pages → Source** to **GitHub Actions**.
 5. The workflow publishes to **https://asif4517-git.github.io/**.
 
 If you would rather keep the portfolio and add the game, Option A is the safer choice.
