@@ -10,6 +10,8 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Served from https://asif4517-git.github.io/neon-rush/ (a subpath, not the domain root).
+  base: "/neon-rush/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {

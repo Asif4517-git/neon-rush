@@ -1,3 +1,5 @@
+## 🎮 Play NEON RUSH in your browser → [Play Now](https://asif4517-git.github.io/neon-rush/)
+
 # NEON RUSH
 
 A complete, playable 3D arcade racing game for the browser. Built with React, TypeScript, Three.js and the Web Audio API. Everything — cars, circuits, city, lighting, particles and soundtrack — is generated procedurally at runtime. No external 3D models or audio files are required.
@@ -31,7 +33,7 @@ git push -u origin main
 
 Then set **Settings → Pages → Source** to **GitHub Actions**. The game goes live at
 **https://asif4517-git.github.io/neon-rush/** (or at the root if you name the repository
-`asif4517-git.github.io`). The workflow uses Node 22, needs no secrets and skips Puppeteer's
+`asif4517-git.github.io`). The workflow uses Node 20, needs no secrets and skips Puppeteer's
 browser download to keep builds fast. A manual `gh-pages` fallback is documented in the guide.
 
 ## Quick start
